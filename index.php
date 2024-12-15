@@ -342,11 +342,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         list($name, $attendance, $message_content, $local_time) = explode("|", $msg);
                         echo "
                     <div class='bg-gray-800 p-2 rounded-lg'>
-                        <div class="bg-gray-700 p-4 rounded-lg">
-                            <h3 class='text-yellow-600 text-start'>$name</h3>
+                        <h3 class='text-yellow-600 text-start'>$name</h3>
                             <p class='text-gray-300 text-start'>$message_content</p>
                             <p class='text-yellow-600 text-sm mt-2 text-end'>$local_time - $attendance</p>
-                        </div>
                     </div>
                     ";
                     }
