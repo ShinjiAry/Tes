@@ -310,7 +310,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <label for="name" class="block mb-2 text-start text-[12px]" style="font-family: 'Poppins', cursive;">Masukan Namamu :</label>
                     <input type="text" id="name" name="name" required class="w-full p-2 rounded bg-gray-700 border border-gray-600">
                 </div>
-                <div class="flex items-center space-x-4 " style="font-family: 'Pooins', cursive;">
+                <div class="flex items-center space-x-4 " style="font-family: 'Poppins', cursive;">
                     <label class="flex items-center">
                         <input type="radio" name="hadir" class="form-checkbox h-5 w-5 text-yellow-400 ">
                         <span class="ml-2 text-[10px]">Hadir</span>
@@ -343,7 +343,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         echo "
                     <div class='bg-gray-800 p-4 rounded-lg'>
                         <h3 class='text-yellow-600 text-start text-[11px] bg-gray-700 pl-2 pt-4 pr-4 rounded-t-lg'style="font-family: 'Poppins', cursive;">$name</h3>
-                        <p class='text-gray-300 text-start bg-gray-700 pl-4 pr-4 text-[8px]'style="font-family: 'Poppins', cursive;">$message_content</p>
+                        <p class='text-gray-300 text-start bg-gray-700 pl-4 pr-4 text-[6px]'style="font-family: 'Poppins', cursive;">$message_content</p>
                         <p class='text-yellow-600 text-[8px] text-end bg-gray-700 pl-4 pb-2 pr-4 rounded-b-lg'>$local_time - $attendance</p>
                     </div>
                     ";
