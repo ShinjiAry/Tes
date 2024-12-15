@@ -311,8 +311,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <input type="checkbox" name="hadir" class="form-checkbox h-5 w-5 text-yellow-400">
                     <span class="ml-2">Hadir</span>
                 </label>
-                <label class="flex items-center">
-                    <input type="checkbox" name="tidak_hadir" class="form-checkbox h-5 w-5 text-yellow-400">
+                <label class="flex items-center ">
+                    <input type="checkbox" name="tidak_hadir" class="form-checkbox h-5 w-5 rounded-full text-yellow-400">
                     <span class="ml-2">Tidak Hadir</span>
                 </label>
             </div>
@@ -338,7 +338,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     list($name, $attendance, $message_content, $local_time) = explode("|", $msg);
                     echo "
                     <div class='bg-gray-800 p-4 rounded-lg'>
-                        <h3 class='text-yellow-400 font-bold'>$name</h3>
+                        <h3 class='text-yellow-400 font-bold place-items-start'>$name</h3>
                         <p class='text-gray-300'>$message_content</p>
                         <p class='text-gray-500 text-sm mt-2'>$local_time - $attendance</p>
                     </div>
