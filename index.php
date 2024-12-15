@@ -310,8 +310,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <label for="name" class="block mb-2 text-start text-[12px]" style="font-family: 'Poppins', cursive;">Masukan Namamu :</label>
                     <input type="text" id="name" name="name" required class="w-full p-2 rounded bg-gray-700 border border-gray-600">
                 </div>
-                <div class="flex items-center space-x-4 "style="font-family: 'Pooins', cursive;">
-                    <label class="flex items-center" >
+                <div class="flex items-center space-x-4 " style="font-family: 'Pooins', cursive;">
+                    <label class="flex items-center">
                         <input type="radio" name="hadir" class="form-checkbox h-5 w-5 text-yellow-400 ">
                         <span class="ml-2 text-[10px]">Hadir</span>
                     </label>
@@ -321,7 +321,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     </label>
                 </div>
                 <div>
-                    <label for="message" class="block mb-2 text-[12px] text-start"style="font-family: 'Poppins', cursive;">Masukan Ucapan :</label>
+                    <label for="message" class="block mb-2 text-[12px] text-start" style="font-family: 'Poppins', cursive;">Masukan Ucapan :</label>
                     <textarea id="message" name="message" rows="4" required class="w-full p-2 rounded bg-gray-700 border border-gray-600"></textarea>
                 </div>
                 <!-- Input Hidden untuk Waktu Lokal -->
@@ -332,8 +332,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </form>
 
             <!-- Daftar Ucapan -->
-            <h2 class="text-[30px] mt-6" style="font-family: 'Hurricane', cursive;"">Ucapan & Doa ❤️</h2>
-            <div class="space-y-4 mt-4">
+            <h2 class="text-[30px] mt-6" style="font-family: 'Hurricane', cursive;">Ucapan & Doa ❤️</h2>
+            <div class=" space-y-4 mt-4">
                 <?php
                 // Baca dan tampilkan ucapan dari file
                 if (file_exists("messages.txt")) {
@@ -341,7 +341,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     foreach ($messages as $msg) {
                         list($name, $attendance, $message_content, $local_time) = explode("|", $msg);
                         echo "
-                    <div class='bg-gray-800 p-4 rounded-lg'>
+                    <div class='bg-gray-800 p-4 rounded-lg ' style="font-family: 'Poppins', cursive;">
                         <h3 class='text-yellow-600 text-start text-[12px] bg-gray-700 pl-4 pt-4 pr-4 rounded-t-lg'>$name</h3>
                         <p class='text-gray-300 text-start bg-gray-700 pl-4 pr-4 text-[10px]'>$message_content</p>
                         <p class='text-yellow-600 text-[8px] text-end bg-gray-700 pl-4 pb-4 pr-4 rounded-b-lg'>$local_time - $attendance</p>
@@ -352,9 +352,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     echo "<p>Belum ada ucapan yang dikirim.</p>";
                 }
                 ?>
-            </div>
-            <h2>Kami yang berbahagia</h2>
-            <p>Keluarga Bapak I Nengah Urip <br>&<br>Keluarga Ibu Agustina Christiana Johannes</p>
+        </div>
+        <h2 class="mt-5 text-[30px] text-yellow-600" style="font-family: 'Hurricane', cursive;">Kami yang berbahagia</h2>
+        <p class="mt-3 text-[12px]"style="font-family: 'Poppins', cursive;">Keluarga Bapak I Nengah Urip <br>&<br>Keluarga Ibu Agustina Christiana Johannes</p>
         </div>
     </section>
 
