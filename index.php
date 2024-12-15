@@ -310,7 +310,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <label for="name" class="block mb-2 text-start text-[12px]" style="font-family: 'Poppins', cursive;">Masukan Namamu :</label>
                     <input type="text" id="name" name="name" required class="w-full p-2 rounded bg-gray-700 border border-gray-600">
                 </div>
-                <div class="flex items-center space-x-4 " style="font-family: 'Pooins', cursive;">
+                <div class="flex items-center space-x-4 " style="font-family: 'Poppins', cursive;">
                     <label class="flex items-center">
                         <input type="radio" name="hadir" class="form-checkbox h-5 w-5 text-yellow-400 ">
                         <span class="ml-2 text-[10px]">Hadir</span>
