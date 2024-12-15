@@ -288,22 +288,27 @@
                 <button type="submit" class="w-full bg-orange-500 py-2 text-white rounded">Kirim Ucapan</button>
             </form>
 
-            <h2 class="text-2xl mt-10">Ucapan yang Telah Dikirim:</h2>
-            <div id="messages" class="space-y-4 mt-4">
-                <?php
-                // Menampilkan ucapan yang sudah ada
-                if (file_exists('messages.txt')) {
-                    $messages = file('messages.txt');
-                    foreach ($messages as $message) {
-                        list($name, $attendance, $message_content, $date) = explode('|', $message);
-                        echo "<div class='p-4 bg-gray-800 rounded'>
-                                    <h4 class='text-lg font-bold'>{$name} ({$attendance})</h4>
-                                    <p>{$message_content}</p>
-                                    <span class='text-xs text-gray-400'>{$date}</span>
-                                </div>";
-                    }
-                }
-                ?>
+            <h2 class="text-2xl font-semibold mt-10 text-center">Ucapan yang Telah Dikirim</h2>
+<div id="messages" class="space-y-4 mt-6">
+    <?php
+        // Menampilkan ucapan yang sudah ada
+        if(file_exists('messages.txt')) {
+            $messages = file('messages.txt');
+            foreach ($messages as $message) {
+                list($name, $attendance, $message_content, $date) = explode('|', $message);
+                echo "<div class='bg-gray-800 p-4 rounded-lg shadow-md'>
+                        <div class='flex justify-between items-center mb-2'>
+                            <h4 class='text-lg font-semibold text-orange-400'>{$name}</h4>
+                            <span class='text-sm text-gray-400'>{$attendance}</span>
+                        </div>
+                        <p class='text-gray-300'>{$message_content}</p>
+                        <div class='text-right text-xs text-gray-500 mt-2'>{$date}</div>
+                    </div>";
+            }
+        } else {
+            echo "<p class='text-center text-gray-400'>Belum ada ucapan yang dikirim.</p>";
+        }
+    ?>
             </div>
         </div>
     </section>
