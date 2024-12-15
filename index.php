@@ -356,7 +356,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <div class='bg-gray-800 p-2 mt-4 rounded-lg ' >
                         <h3 class='text-yellow-600 text-start text-[12px] bg-gray-700 pl-2 pt-2 pr-2 rounded-t'>$name</h3>
                         <p class='text-gray-300 text-start bg-gray-700 pl-2 pr-2 text-[8px]'>$message_content</p>
-                        <p class='text-yellow-600 text-[6px] text-end bg-gray-700 pl-2 pb-2 pr-2 rounded-b'>$local_time - $attendance</p>
+                        <p class='text-yellow-600 text-[6px] text-end bg-gray-700 pl-2 pb-2 pr-2 rounded-b mt-2'>$local_time - $attendance</p>
                     </div>
                     ";
                     }
