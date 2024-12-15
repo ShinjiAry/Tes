@@ -353,10 +353,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     foreach ($messages as $msg) {
                         list($name, $attendance, $message_content, $local_time) = explode("|", $msg);
                         echo "
-                    <div class='bg-gray-800 p-4 rounded-lg ' >
-                        <h3 class='text-yellow-600 text-start text-[12px] bg-gray-700 pl-2 pt-2 pr-2 rounded-t-lg'>$name</h3>
-                        <p class='text-gray-300 text-start bg-gray-700 pl-2 pr-2 text-[8px]'>$message_content</p>
-                        <p class='text-yellow-600 text-[6px] text-end bg-gray-700 pl-4 pb-4 pr-4 rounded-b-lg'>$local_time - $attendance</p>
+                    <div class='bg-gray-800 p-4 mt-4 rounded-lg ' >
+                        <h3 class='text-yellow-600 text-start text-[12px] bg-gray-700 pl-1 pt-1 pr-1 rounded-t-lg'>$name</h3>
+                        <p class='text-gray-300 text-start bg-gray-700 pl-1 pr-1 text-[8px]'>$message_content</p>
+                        <p class='text-yellow-600 text-[6px] text-end bg-gray-700 pl-1 pb-1 pr-1 rounded-b-lg'>$local_time - $attendance</p>
                     </div>
                     ";
                     }
