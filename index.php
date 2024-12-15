@@ -284,7 +284,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </section>
 
     <!-- Gallery Section -->
-    <section id="gallery" class="py-8 bg-gray-900 text-center">
+    <section id="gallery" class="py-8 bg-black text-center">
         <h2 class="text-3xl md:text-4xl " style="font-family: 'Hurricane', cursive;">Momen</h2>
         <p class="text-6xl " style="font-family: 'Hurricane', cursive;">Bahagia</p>
         <div class="flex justify-center items-center "><svg width="200" height="77" viewBox="0 0 200 77" fill="none" xmlns="http://www.w3.org/2000/svg ">
