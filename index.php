@@ -1,3 +1,18 @@
+<?php
+// Menyimpan data ke file jika form dikirim
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $name = htmlspecialchars($_POST['name']);
+    $attendance = isset($_POST['hadir']) ? "Hadir" : "Tidak Hadir";
+    $message_content = htmlspecialchars($_POST['message']);
+    $local_time = htmlspecialchars($_POST['local_time']); // Waktu lokal dari JS
+
+    // Simpan ke file
+    $file = fopen("messages.txt", "a");
+    fwrite($file, "$name|$attendance|$message_content|$local_time\n");
+    fclose($file);
+}
+?>
+    
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,6 +21,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wedding Invitation</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Fungsi untuk mendapatkan waktu lokal user
+        function getCurrentTime() {
+            const now = new Date();
+            const options = { 
+                day: '2-digit', month: 'short', year: 'numeric',
+                hour: '2-digit', minute: '2-digit', second: '2-digit',
+                hour12: false
+            };
+            return now.toLocaleString('id-ID', options); // Format Indonesia
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            // Set nilai waktu lokal ke input hidden
+            document.getElementById("local_time").value = getCurrentTime();
+        });
+    </script>
     <script>
         function startCountdown() {
             // Waktu target: 9 Januari 2025, pukul 00:00 UTC
@@ -267,48 +299,55 @@
     <!-- Speech & Prayer Section -->
     <section id="pesan" class="py-16 bg-gray-900 text-center p-4">
         <div class="container mx-auto p-6">
-            <h1 class="text-center text-3xl mb-8">Masukkan Ucapan dan Doamu</h1>
+        <!-- Form Input -->
+        <h1 class="text-2xl font-bold mb-4">Masukkan Ucapan dan Doa</h1>
+        <form method="POST" action="" class="space-y-4 bg-gray-800 p-6 rounded-lg shadow">
+            <div>
+                <label for="name" class="block mb-2">Masukan Namamu :</label>
+                <input type="text" id="name" name="name" required class="w-full p-2 rounded bg-gray-700 border border-gray-600">
+            </div>
+            <div class="flex items-center space-x-4">
+                <label class="flex items-center">
+                    <input type="checkbox" name="hadir" class="form-checkbox h-5 w-5 text-yellow-400">
+                    <span class="ml-2">Hadir</span>
+                </label>
+                <label class="flex items-center">
+                    <input type="checkbox" name="tidak_hadir" class="form-checkbox h-5 w-5 text-yellow-400">
+                    <span class="ml-2">Tidak Hadir</span>
+                </label>
+            </div>
+            <div>
+                <label for="message" class="block mb-2">Masukan Ucapan dan Doamu :</label>
+                <textarea id="message" name="message" rows="4" required class="w-full p-2 rounded bg-gray-700 border border-gray-600"></textarea>
+            </div>
+            <!-- Input Hidden untuk Waktu Lokal -->
+            <input type="hidden" id="local_time" name="local_time">
+            <button type="submit" class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded">
+                Kirim Ucapan
+            </button>
+        </form>
 
-            <form action="save_message.php" method="POST" class="space-y-4">
-                <div>
-                    <label for="name" class="block">Masukkan Namamu:</label>
-                    <input type="text" id="name" name="name" class="w-full px-4 py-2 bg-gray-700 rounded" required>
-                </div>
-
-                <div class="flex items-center space-x-4">
-                    <label><input type="radio" name="attendance" value="Hadir" checked> Hadir</label>
-                    <label><input type="radio" name="attendance" value="Tidak Hadir"> Tidak Hadir</label>
-                </div>
-
-                <div>
-                    <label for="message" class="block">Masukkan Ucapan dan Doamu:</label>
-                    <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 bg-gray-700 rounded" required></textarea>
-                </div>
-
-                <button type="submit" class="w-full bg-orange-500 py-2 text-white rounded">Kirim Ucapan</button>
-            </form>
-
-            <h2 class="text-2xl font-semibold mt-10 text-center">Ucapan yang Telah Dikirim</h2>
-<div id="messages" class="space-y-4 mt-6">
-    <?php
-        // Menampilkan ucapan yang sudah ada
-        if(file_exists('messages.txt')) {
-            $messages = file('messages.txt');
-            foreach ($messages as $message) {
-                list($name, $attendance, $message_content, $date) = explode('|', $message);
-                echo "<div class='bg-gray-800 p-4 rounded-lg shadow-md'>
-                        <div class='flex justify-between items-start mb-2'>
-                            <h4 class='text-lg font-semibold text-orange-400'>{$name}</h4>
-                            <span class='text-sm text-gray-400'>{$attendance}</span>
-                        </div>
-                        <p class='text-gray-300'>{$message_content}</p>
-                        <div class='text-right text-xs text-gray-500 mt-2'>{$date}</div>
-                    </div>";
+        <!-- Daftar Ucapan -->
+        <h2 class="text-xl font-semibold mt-6">Daftar Ucapan</h2>
+        <div class="space-y-4 mt-4">
+            <?php
+            // Baca dan tampilkan ucapan dari file
+            if (file_exists("messages.txt")) {
+                $messages = file("messages.txt", FILE_IGNORE_NEW_LINES);
+                foreach ($messages as $msg) {
+                    list($name, $attendance, $message_content, $local_time) = explode("|", $msg);
+                    echo "
+                    <div class='bg-gray-800 p-4 rounded-lg'>
+                        <h3 class='text-yellow-400 font-bold'>$name</h3>
+                        <p class='text-gray-300'>$message_content</p>
+                        <p class='text-gray-500 text-sm mt-2'>$local_time - $attendance</p>
+                    </div>
+                    ";
+                }
+            } else {
+                echo "<p>Belum ada ucapan yang dikirim.</p>";
             }
-        } else {
-            echo "<p class='text-center text-gray-400'>Belum ada ucapan yang dikirim.</p>";
-        }
-    ?>
+            ?>
             </div>
         </div>
     </section>
