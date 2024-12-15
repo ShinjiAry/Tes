@@ -353,7 +353,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 }
                 ?>
         </div>
-            <div class=" flex justify-center items-center">
+            <div class="items-center">
             <h2 class="mt-5 text-[30px] text-yellow-600" style="font-family: 'Hurricane', cursive;">Kami yang berbahagia</h2>
             <p class="mt-3 text-[12px]"style="font-family: 'Poppins', cursive;">Keluarga Bapak I Nengah Urip <br>&<br>Keluarga Ibu Agustina Christiana Johannes</p>
             <svg class="flex justify-center items-center " width="200" height="77" viewBox="0 0 200 77" fill="none" xmlns="http://www.w3.org/2000/svg ">
