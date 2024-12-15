@@ -343,8 +343,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         echo "
                     <div class='bg-gray-800 p-4 rounded-lg ' >
                         <h3 class='text-yellow-600 text-start text-[12px] bg-gray-700 pl-4 pt-4 pr-4 rounded-t-lg'>$name</h3>
-                        <p class='text-gray-300 text-start bg-gray-700 pl-4 pr-4 text-[10px]'>$message_content</p>
-                        <p class='text-yellow-600 text-[8px] text-end bg-gray-700 pl-4 pb-4 pr-4 rounded-b-lg'>$local_time - $attendance</p>
+                        <p class='text-gray-300 text-start bg-gray-700 pl-4 pr-4 text-[8px]'>$message_content</p>
+                        <p class='text-yellow-600 text-[6px] text-end bg-gray-700 pl-4 pb-4 pr-4 rounded-b-lg'>$local_time - $attendance</p>
                     </div>
                     ";
                     }
