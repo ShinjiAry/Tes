@@ -21,6 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wedding Invitation</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
         // Fungsi untuk mendapatkan waktu lokal user
         function getCurrentTime() {
             const now = new Date();
