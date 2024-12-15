@@ -17,3 +17,4 @@ if (file_exists('messages.txt')) {
     $messages = file_get_contents('messages.txt');
     echo nl2br($messages); // Menampilkan pesan dengan format baru
 }
+?>
