@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             const now = new Date();
             const options = { 
                 day: '2-digit', month: 'short', year: 'numeric',
-                hour: '2-digit', minute: '2-digit', second: '2-digit',
+                hour: '2-digit', minute: '2-digit',
                 hour12: false
             };
             return now.toLocaleString('id-ID', options); // Format Indonesia
@@ -312,7 +312,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <span class="ml-2">Hadir</span>
                 </label>
                 <label class="flex items-center">
-                    <input type="checkbox" name="tidak_hadir" class="form-checkbox h-5 w-5 text-yellow-400">
+                    <input type="checkbox" name="tidak_hadir" class="form-checkbox h-5 w-5 rounded-full text-yellow-400">
                     <span class="ml-2">Tidak Hadir</span>
                 </label>
             </div>
