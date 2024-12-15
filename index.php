@@ -296,6 +296,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <img src="/img/3.jpg" alt="Photo 3 " class="w-full h-60 object-cover rounded-lg">
             <img src="/img/4.jpg" alt="Photo 4" class="w-full h-60 object-cover rounded-lg">
             <img src="/img/5.jpg" alt="Photo 5" class="w-full h-60 object-cover rounded-lg">
+            <img src="/img/6.jpg" alt="Photo 5" class="w-full h-60 object-cover rounded-lg">
+            <img src="/img/7.jpg" alt="Photo 5" class="w-full h-60 object-cover rounded-lg">
         </div>
     </section>
 
