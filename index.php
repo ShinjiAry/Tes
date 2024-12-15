@@ -260,22 +260,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <div class="flex flex-wrap justify-center space-x-4 sm:space-x-6 md:space-x-8 lg:space-x-10">
                         <div class="flex flex-col items-center mx-2 my-4">
                             <div class="text-lg sm:text-5xl md:text-6xl lg:text-7xl font-bold" id="days">00</div>
-                            <span class="text-xs sm:text-base">Day</span>
+                            <span class="text-sm sm:text-base">Day</span>
                         </div>
                         <div class="text-lg sm:text-3xl text-white">:</div>
                         <div class="flex flex-col items-center mx-2 my-4">
                             <div class="text-lg sm:text-5xl md:text-6xl lg:text-7xl font-bold" id="hours">00</div>
-                            <span class="text-xs sm:text-base">Hours</span>
+                            <span class="text-sm sm:text-base">Hours</span>
                         </div>
                         <div class="text-lg sm:text-3xl text-white">:</div>
                         <div class="flex flex-col items-center mx-2 my-4">
                             <div class="text-xl sm:text-5xl md:text-6xl lg:text-7xl font-bold" id="minutes">00</div>
-                            <span class="text-xs sm:text-base">Minutes</span>
+                            <span class="text-sm sm:text-base">Minutes</span>
                         </div>
                         <div class="text-lg sm:text-3xl text-white">:</div>
                         <div class="flex flex-col items-center mx-2 my-4">
                             <div class="text-xl sm:text-5xl md:text-6xl lg:text-7xl font-bold" id="seconds">00</div>
-                            <span class="text-xs sm:text-base">Seconds</span>
+                            <span class="text-sm sm:text-base">Seconds</span>
                         </div>
                     </div>
                 </div>
