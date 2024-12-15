@@ -342,8 +342,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         list($name, $attendance, $message_content, $local_time) = explode("|", $msg);
                         echo "
                     <div class='bg-gray-800 p-4 rounded-lg'>
-                        <h3 class='text-yellow-600 text-start text-[11px] bg-gray-700 pl-2 pt-4 pr-4 rounded-t-lg'style="font-family: 'Poppins', cursive;">$name</h3>
-                        <p class='text-gray-300 text-start bg-gray-700 pl-4 pr-4 text-[6px]'style="font-family: 'Poppins', cursive;">$message_content</p>
+                        <h3 class='text-yellow-600 text-start text-[11px] bg-gray-700 pl-2 pt-4 pr-4 rounded-t-lg'>$name</h3>
+                        <p class='text-gray-300 text-start bg-gray-700 pl-4 pr-4 text-[6px]'>$message_content</p>
                         <p class='text-yellow-600 text-[8px] text-end bg-gray-700 pl-4 pb-2 pr-4 rounded-b-lg'>$local_time - $attendance</p>
                     </div>
                     ";
@@ -352,9 +352,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     echo "<p>Belum ada ucapan yang dikirim.</p>";
                 }
                 ?>
-        </div>
-        <h2 class="mt-5 text-[30px] text-yellow-600" style="font-family: 'Hurricane', cursive;">Kami yang berbahagia</h2>
-        <p class="mt-3 text-[12px]"style="font-family: 'Poppins', cursive;">Keluarga Bapak I Nengah Urip <br>&<br>Keluarga Ibu Agustina Christiana Johannes</p>
+            </div>
+            <h2 class="mt-5 text-[30px] text-yellow-600" style="font-family: 'Hurricane', cursive;">Kami yang berbahagia</h2>
+            <p class="mt-3 text-[12px]" style="font-family: 'Poppins', cursive;">Keluarga Bapak I Nengah Urip <br>&<br>Keluarga Ibu Agustina Christiana Johannes</p>
         </div>
     </section>
 
