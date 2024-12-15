@@ -7,19 +7,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $local_time = htmlspecialchars($_POST['local_time']); // Waktu lokal dari JS
 
     // Simpan ke file
-    $file = fopen("messages.txt", "r");
-    while (($line = fgets($file)) !== false) {
-    list($name, $attendance, $message, $time) = explode("|", $line);
-    echo "
-    <div class='bg-gray-800 p-4 rounded-lg shadow-md'>
-        <div class='flex items-center space-x-2 mb-1'>
-            <span class='font-semibold text-orange-500'>$name</span>
-            <span class='text-gray-400 text-sm'>- $attendance</span>
-        </div>
-        <p class='text-gray-300 text-sm'>$message</p>
-    </div>";
+    $file = fopen("messages.txt", "a");
+    fwrite($file, "$name|$attendance|$message_content|$local_time\n");
+    fclose($file);
 }
-fclose($file);
 ?>
     
 <!DOCTYPE html>
@@ -30,10 +21,6 @@ fclose($file);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wedding Invitation</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-    // Menyimpan waktu lokal
-    document.getElementById("local_time").value = new Date().toLocaleString();
-    <script>
         // Fungsi untuk mendapatkan waktu lokal user
         function getCurrentTime() {
             const now = new Date();
