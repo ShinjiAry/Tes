@@ -298,56 +298,64 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <!-- Speech & Prayer Section -->
     <section id="pesan" class="py-16 bg-gray-900 text-center p-4">
-         <div class="container mx-auto p-6">
+          <div class="max-w-3xl mx-auto bg-gray-800 p-6 rounded-lg shadow-lg">
+        <!-- Judul -->
+        <h1 class="text-2xl font-bold mb-4 text-center">Form Ucapan</h1>
+        
         <!-- Form Input -->
-        <h1 class="text-2xl font-bold mb-4">Masukkan Ucapan dan Doa</h1>
-        <form method="POST" action="" class="space-y-4 bg-gray-800 p-6 rounded-lg shadow">
+        <form method="POST" action="" class="space-y-4">
             <div>
-                <label for="name" class="block mb-2">Masukan Namamu :</label>
-                <input type="text" id="name" name="name" required class="w-full p-2 rounded bg-gray-700 border border-gray-600">
+                <label class="block text-sm font-medium mb-1">Nama:</label>
+                <input type="text" name="name" required class="w-full p-2 rounded-lg bg-gray-700 border-none focus:ring-2 focus:ring-orange-500">
             </div>
-            <div class="flex items-center space-x-4">
-                <label class="flex items-center">
-                    <input type="checkbox" name="hadir" class="form-checkbox h-5 w-5 text-yellow-400">
-                    <span class="ml-2">Hadir</span>
-                </label>
-                <label class="flex items-center ">
-                    <input type="checkbox" name="tidak_hadir" class="form-checkbox h-5 w-5 rounded-full text-yellow-400">
-                    <span class="ml-2">Tidak Hadir</span>
-                </label>
-            </div>
+
             <div>
-                <label for="message" class="block mb-2">Masukan Ucapan dan Doamu :</label>
-                <textarea id="message" name="message" rows="4" required class="w-full p-2 rounded bg-gray-700 border border-gray-600"></textarea>
+                <label class="block text-sm font-medium mb-1">Kehadiran:</label>
+                <div class="flex items-center space-x-4">
+                    <label class="inline-flex items-center space-x-2">
+                        <input type="radio" name="hadir" value="Hadir" class="form-radio h-5 w-5 text-orange-500">
+                        <span class="text-sm">Hadir</span>
+                    </label>
+                    <label class="inline-flex items-center space-x-2">
+                        <input type="radio" name="hadir" value="Tidak Hadir" class="form-radio h-5 w-5 text-orange-500">
+                        <span class="text-sm">Tidak Hadir</span>
+                    </label>
+                </div>
             </div>
-            <!-- Input Hidden untuk Waktu Lokal -->
+
+            <div>
+                <label class="block text-sm font-medium mb-1">Ucapan:</label>
+                <textarea name="message" rows="3" required class="w-full p-2 rounded-lg bg-gray-700 border-none focus:ring-2 focus:ring-orange-500"></textarea>
+            </div>
+
             <input type="hidden" id="local_time" name="local_time">
-            <button type="submit" class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded">
+
+            <!-- Tombol Kirim -->
+            <button type="submit" class="w-full bg-orange-500 text-white py-2 rounded-lg font-semibold hover:bg-orange-600">
                 Kirim Ucapan
             </button>
         </form>
+    </div>
 
-        <!-- Daftar Ucapan -->
-        <h2 class="text-xl font-semibold mt-6">Daftar Ucapan</h2>
-        <div class="space-y-4 mt-4">
-            <?php
-            // Baca dan tampilkan ucapan dari file
-            if (file_exists("messages.txt")) {
-                $messages = file("messages.txt", FILE_IGNORE_NEW_LINES);
-                foreach ($messages as $msg) {
-                    list($name, $attendance, $message_content, $local_time) = explode("|", $msg);
-                    echo "
-                    <div class='bg-gray-800 p-4 rounded-lg'>
-                        <h3 class='text-yellow-400 font-bold place-items-start'>$name</h3>
-                        <p class='text-gray-300'>$message_content</p>
-                        <p class='text-gray-500 text-sm mt-2'>$local_time - $attendance</p>
-                    </div>
-                    ";
-                }
-            } else {
-                echo "<p>Belum ada ucapan yang dikirim.</p>";
-            }
-            ?>
+    <!-- Daftar Ucapan -->
+    <div class="max-w-3xl mx-auto mt-8 space-y-4">
+        <h2 class="text-xl font-bold mb-2">Daftar Ucapan</h2>
+
+        <!-- Contoh Ucapan (dinamis dari PHP nanti) -->
+        <div class="bg-gray-800 p-4 rounded-lg shadow-md">
+            <div class="flex items-center space-x-2 mb-1">
+                <span class="font-semibold text-orange-500">Husen</span>
+                <span class="text-gray-400 text-sm">- Hadir</span>
+            </div>
+            <p class="text-gray-300 text-sm">Selamat menempuh hidup baru. Semoga bahagia selalu.</p>
+        </div>
+
+        <div class="bg-gray-800 p-4 rounded-lg shadow-md">
+            <div class="flex items-center space-x-2 mb-1">
+                <span class="font-semibold text-orange-500">Shita Alania</span>
+                <span class="text-gray-400 text-sm">- Tidak Hadir</span>
+            </div>
+            <p class="text-gray-300 text-sm">Maaf tidak bisa hadir, tapi doa terbaik untuk kalian.</p>
         </div>
     </div>
     </section>
