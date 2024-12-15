@@ -265,30 +265,55 @@
 
     <!-- Speech & Prayer Section -->
     <section id="pesan" class="py-16 bg-gray-900 text-center p-4">
-        <form action="ucapan.php" method="POST" class="space-y-4">
-            <input type="text" name="name" placeholder="Masukkan Namamu" class="w-full px-4 py-2 border rounded" required>
+        <div class="container mx-auto p-8">
+        <h1 class="text-3xl font-bold mb-6">Kirim Ucapan</h1>
+
+        <!-- Form Input -->
+        <form id="ucapanForm" class="space-y-4">
+            <input type="text" name="name" id="name" placeholder="Masukkan Namamu" class="w-full px-4 py-2 border rounded" required>
             
             <div class="flex items-center space-x-4">
                 <label><input type="radio" name="attendance" value="Hadir" checked> Hadir</label>
                 <label><input type="radio" name="attendance" value="Tidak Hadir"> Tidak Hadir</label>
             </div>
-        
-            <textarea name="message" placeholder="Masukkan Ucapan dan Doamu" class="w-full px-4 py-2 border rounded" required></textarea>
-        
+
+            <textarea name="message" id="message" placeholder="Masukkan Ucapan dan Doamu" class="w-full px-4 py-2 border rounded" required></textarea>
+
             <button type="submit" class="bg-orange-500 text-white px-4 py-2 rounded">Kirim Ucapan</button>
         </form>
-        
-        <!-- Tempat untuk menampilkan ucapan -->
-        <div class="mt-8" id="messages">
+
+        <!-- Menampilkan ucapan -->
+        <div id="messages" class="mt-8">
             <?php include 'ucapan.php'; ?>
         </div>
+    </div>
     </section>
 
     <!-- Footer -->
     <footer class="py- bg-gray-800 text-center">
         <p class="text-gray-500 text-[10px]">© 2024 Duasayu</p>
     </footer>
-    
+<script>
+        // Menangani pengiriman form dengan AJAX
+        $('#ucapanForm').on('submit', function(e) {
+            e.preventDefault(); // Mencegah form dari pengiriman biasa
+
+            // Ambil data form
+            var formData = $(this).serialize();
+
+            // Kirim data form menggunakan AJAX
+            $.ajax({
+                url: 'ucapan.php', // Menyimpan data di ucapan.php
+                type: 'POST',
+                data: formData,
+                success: function(response) {
+                    // Tampilkan hasil ucapan terbaru tanpa memuat ulang halaman
+                    $('#messages').html(response);
+                    $('#ucapanForm')[0].reset(); // Reset form setelah pengiriman
+                }
+            });
+        });
+    </script>    
 </script>
 </body>
 <script>
