@@ -200,7 +200,7 @@
     </section>
 
     <!-- Event Schedule Section -->
-    <section class="p-8 bg-black text-center text-[10px]">
+    <section class="bg-gray-900 text-white]">
         <p class="pl-8 pr-8 text-yellow-600">“Grbhnāmi te saubhagatvāya hastam,Mayā patyā jaradastir yathāsah,Bhago aryamā savitā puramdhir,Mahyam tvādurgārhapatyāya devāh.”
             (Rgveda : X.85.36)</p>
         <p class="pl-8 pr-8 mt-4 text-gray-400 "> Dalam sebuah pernikahan kalian disatukan demi sebuah kebahagiaan dengan janji hati untuk saling membahagiakan. Bersamaku engkau akan hidup selamanya karena Tuhan pasti akan memberikan karunia sebagai pelindung dan saksi dalam pernikahan ini. Untuk itulah kalian dipersatukan dalam satu keluarga</p>
