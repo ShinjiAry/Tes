@@ -312,7 +312,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </section>
 
     <!-- Speech & Prayer Section -->
-    <section id="pesan" class="py-10 bg-gray-900 text-center p-4">
+    <section id="pesan" class="py-10 bg-black text-center p-4">
         <div class="container mx-auto p-6">
             <!-- Form Input -->
             <h1 class="text-[30px]" style="font-family: 'Hurricane', cursive;">Pesan & Kesan</h1>
