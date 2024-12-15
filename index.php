@@ -342,9 +342,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         list($name, $attendance, $message_content, $local_time) = explode("|", $msg);
                         echo "
                     <div class='bg-gray-800 p-4 rounded-lg'>
-                        <h3 class='text-yellow-600 text-start bg-gray-700 p-4 rounded-lg'>$name</h3>
-                        <p class='text-gray-300 text-start bg-gray-700 p-4 rounded-lg'>$message_content</p>
-                        <p class='text-yellow-600 text-sm mt-2 text-end bg-gray-700 p-4 rounded-lg'>$local_time - $attendance</p>
+                        <h3 class='text-yellow-600 text-start bg-gray-700 p-4 rounded-t-lg'>$name</h3>
+                        <p class='text-gray-300 text-start bg-gray-700 p-4 '>$message_content</p>
+                        <p class='text-yellow-600 text-sm text-end bg-gray-700 p-4 rounded-b-lg'>$local_time - $attendance</p>
                     </div>
                     ";
                     }
