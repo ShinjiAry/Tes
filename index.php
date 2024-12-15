@@ -284,7 +284,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </section>
 
     <!-- Gallery Section -->
-    <section id="gallery" class="py-10 bg-gray-900 text-center">
+    <section id="gallery" class="py-8 bg-gray-900 text-center">
         <h2 class="text-3xl md:text-4xl " style="font-family: 'Hurricane', cursive;">Momen</h2>
         <p class="text-6xl " style="font-family: 'Hurricane', cursive;">Bahagia</p>
         <div class="flex justify-center items-center "><svg width="200" height="77" viewBox="0 0 200 77" fill="none" xmlns="http://www.w3.org/2000/svg ">
@@ -299,8 +299,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <img src="/img/6.jpg" alt="Photo 5" class="w-full h-60 object-cover rounded-lg">
             <img src="/img/7.jpg" alt="Photo 5" class="w-full h-60 object-cover rounded-lg">
         </div>
-        <div class="flex flex-col items-center">
-            <h2 class="text-yellow-600 text-[30px]" style="font-family: 'Hurricane', cursive;">Gift Online</h2>
+        <div class="flex flex-col items-center mt-10">
+            <h2 class="text-yellow-600 text-[30px] mb-3" style="font-family: 'Hurricane', cursive;">Gift Online</h2>
             <img class="pb-4 h-48 w-48 mx-auto" src="/img/gift1.jpg" alt="Gift">
             <div class="flex items-center space-x-2">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-wallet2" viewBox="0 0 16 16">
