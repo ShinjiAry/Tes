@@ -298,58 +298,70 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <!-- Speech & Prayer Section -->
     <section id="pesan" class="py-16 bg-gray-900 text-center p-4">
-        <div class="container mx-auto p-6">
-        <!-- Form Input -->
-        <h1 class="text-2xl font-bold mb-4">Masukkan Ucapan dan Doa</h1>
-        <form method="POST" action="" class="space-y-4 bg-gray-800 p-6 rounded-lg shadow">
-            <div>
-                <label for="name" class="block mb-2">Masukan Namamu :</label>
-                <input type="text" id="name" name="name" required class="w-full p-2 rounded bg-gray-700 border border-gray-600">
+         <div class="w-full max-w-md">
+        <h1 class="text-2xl font-bold mb-4 text-center">Form Ucapan</h1>
+        <form method="POST" action="" class="bg-gray-800 p-6 rounded-lg shadow-lg">
+            <div class="mb-4">
+                <label for="name" class="block mb-1">Nama:</label>
+                <input type="text" id="name" name="name" class="w-full px-4 py-2 rounded border-gray-700 bg-gray-700 text-white focus:ring focus:ring-blue-500" required>
             </div>
-            <div class="flex items-center space-x-4">
-                <label class="flex items-center">
-                    <input type="checkbox" name="hadir" class="form-checkbox h-5 w-5 text-yellow-400">
-                    <span class="ml-2">Hadir</span>
+
+            <!-- Radio Button -->
+            <div class="mb-4 flex items-center space-x-4">
+                <label class="flex items-center space-x-2">
+                    <input type="radio" name="hadir" value="Hadir" class="form-radio text-blue-500 h-5 w-5 rounded-full" required>
+                    <span>Hadir</span>
                 </label>
-                <label class="flex items-center">
-                    <input type="checkbox" name="tidak_hadir" class="form-checkbox h-5 w-5 text-yellow-400">
-                    <span class="ml-2">Tidak Hadir</span>
+                <label class="flex items-center space-x-2">
+                    <input type="radio" name="hadir" value="Tidak Hadir" class="form-radio text-red-500 h-5 w-5 rounded-full" required>
+                    <span>Tidak Hadir</span>
                 </label>
             </div>
-            <div>
-                <label for="message" class="block mb-2">Masukan Ucapan dan Doamu :</label>
-                <textarea id="message" name="message" rows="4" required class="w-full p-2 rounded bg-gray-700 border border-gray-600"></textarea>
+
+            <div class="mb-4">
+                <label for="message" class="block mb-1">Ucapan:</label>
+                <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 rounded border-gray-700 bg-gray-700 text-white focus:ring focus:ring-blue-500" required></textarea>
             </div>
-            <!-- Input Hidden untuk Waktu Lokal -->
+
+            <!-- Hidden Input untuk Local Time -->
             <input type="hidden" id="local_time" name="local_time">
-            <button type="submit" class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded">
+
+            <button type="submit" class="w-full bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-2 px-4 rounded">
                 Kirim Ucapan
             </button>
         </form>
+    </div>
 
-        <!-- Daftar Ucapan -->
-        <h2 class="text-xl font-semibold mt-6">Daftar Ucapan</h2>
-        <div class="space-y-4 mt-4">
+    <!-- Daftar Ucapan -->
+    <div class="w-full max-w-md mt-8">
+        <h2 class="text-xl font-semibold mb-4 text-center">Daftar Ucapan</h2>
+        <div class="space-y-4">
             <?php
-            // Baca dan tampilkan ucapan dari file
             if (file_exists("messages.txt")) {
-                $messages = file("messages.txt", FILE_IGNORE_NEW_LINES);
-                foreach ($messages as $msg) {
-                    list($name, $attendance, $message_content, $local_time) = explode("|", $msg);
+                $lines = file("messages.txt", FILE_IGNORE_NEW_LINES);
+                foreach ($lines as $line) {
+                    list($name, $attendance, $message, $local_time) = explode("|", $line);
                     echo "
-                    <div class='bg-gray-800 p-4 rounded-lg'>
-                        <h3 class='text-yellow-400 font-bold'>$name</h3>
-                        <p class='text-gray-300'>$message_content</p>
-                        <p class='text-gray-500 text-sm mt-2'>$local_time - $attendance</p>
-                    </div>
+                        <div class='flex items-start bg-gray-800 p-4 rounded-lg shadow'>
+                            <!-- Tanda Hadir -->
+                            <div class='mr-4'>
+                                <div class='w-10 h-10 flex items-center justify-center rounded-full " . ($attendance == 'Hadir' ? 'bg-green-500' : 'bg-red-500') . " text-white font-bold'>
+                                    " . ($attendance == 'Hadir' ? '✔' : '✖') . "
+                                </div>
+                            </div>
+                            <!-- Konten -->
+                            <div>
+                                <p class='text-lg font-semibold'>$name - $attendance</p>
+                                <p class='text-sm text-gray-400'>$message</p>
+                                <p class='text-xs text-gray-500 mt-1'>$local_time</p>
+                            </div>
+                        </div>
                     ";
                 }
-            } else {
-                echo "<p>Belum ada ucapan yang dikirim.</p>";
             }
             ?>
-            </div>
         </div>
+    </div>
     </section>
 
     <!-- Footer -->
