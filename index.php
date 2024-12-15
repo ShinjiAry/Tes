@@ -297,7 +297,7 @@
             foreach ($messages as $message) {
                 list($name, $attendance, $message_content, $date) = explode('|', $message);
                 echo "<div class='bg-gray-800 p-4 rounded-lg shadow-md'>
-                        <div class='flex justify-between items-center mb-2'>
+                        <div class='flex justify-between items-start mb-2'>
                             <h4 class='text-lg font-semibold text-orange-400'>{$name}</h4>
                             <span class='text-sm text-gray-400'>{$attendance}</span>
                         </div>
