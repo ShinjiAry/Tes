@@ -321,7 +321,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     </label>
                 </div>
                 <div>
-                    <label for="message" class="block mb-2 text-[12px] text-start"style="font-family: 'Poppins', cursive;">Masukan Ucapan dan Doamu :</label>
+                    <label for="message" class="block mb-2 text-[12px] text-start"style="font-family: 'Poppins', cursive;">Masukan Ucapan :</label>
                     <textarea id="message" name="message" rows="4" required class="w-full p-2 rounded bg-gray-700 border border-gray-600"></textarea>
                 </div>
                 <!-- Input Hidden untuk Waktu Lokal -->
@@ -332,7 +332,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </form>
 
             <!-- Daftar Ucapan -->
-            <h2 class="text-[30px] mt-6" style="font-family: 'Hurricane', cursive;"">Ucapan dan Doa</h2>
+            <h2 class="text-[30px] mt-6" style="font-family: 'Hurricane', cursive;"">Ucapan & Doa ❤️</h2>
             <div class="space-y-4 mt-4">
                 <?php
                 // Baca dan tampilkan ucapan dari file
@@ -341,10 +341,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     foreach ($messages as $msg) {
                         list($name, $attendance, $message_content, $local_time) = explode("|", $msg);
                         echo "
-                    <div class='bg-gray-800 p-4 rounded-lg'>
-                        <h3 class='text-yellow-600 text-start mb-2'>$name</h3>
-                        <p class='text-gray-300 text-start text-[10px]'>$message_content</p>
-                        <p class='text-yellow-600 text-[8px] mt-2 text-end'>$local_time - $attendance</p>
+                    <div class='bg-gray-800 p-2 rounded-lg'>
+                        <div class="bg-gray-700 p-4 rounded-lg">
+                            <h3 class='text-yellow-600 text-start'>$name</h3>
+                            <p class='text-gray-300 text-start'>$message_content</p>
+                            <p class='text-yellow-600 text-sm mt-2 text-end'>$local_time - $attendance</p>
+                        </div>
                     </div>
                     ";
                     }
@@ -353,6 +355,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 }
                 ?>
             </div>
+            <h2>Kami yang berbahagia</h2>
+            <p>Keluarga Bapak I Nengah Urip <br>&<br>Keluarga Ibu Agustina Christiana Johannes</p>
         </div>
     </section>
 
