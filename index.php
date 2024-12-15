@@ -345,7 +345,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             <!-- Daftar Ucapan -->
             <h2 class="text-[30px] mt-6" style="font-family: 'Hurricane', cursive;">Ucapan & Doa ❤️</h2>
-            <div class=" space-y-4 mt-">
+            <div class=" space-y- mt-">
                 <?php
                 // Baca dan tampilkan ucapan dari file
                 if (file_exists("messages.txt")) {
