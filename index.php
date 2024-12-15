@@ -299,6 +299,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <img src="/img/6.jpg" alt="Photo 5" class="w-full h-60 object-cover rounded-lg">
             <img src="/img/7.jpg" alt="Photo 5" class="w-full h-60 object-cover rounded-lg">
         </div>
+        <div class="flex flex-col items-center">
+            <h2 class="text-yellow-600 text-[30px]" style="font-family: 'Hurricane', cursive;">Gift Online</h2>
+            <img class="pb-4 h-48 w-48 mx-auto" src="/img/gift1.jpg" alt="Gift">
+            <div class="flex items-center space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-wallet2" viewBox="0 0 16 16">
+                    <path d="M12.136.326A1.5 1.5 0 0 1 14 1.78V3h.5A1.5 1.5 0 0 1 16 4.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 13.5v-9a1.5 1.5 0 0 1 1.432-1.499zM5.562 3H13V1.78a.5.5 0 0 0-.621-.484zM1.5 4a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5z"/>
+                </svg>
+                <p class="text-[11px]" style="font-family: 'Poppins', cursive;">GoPay atas nama Ariana</p>
+            </div>
+        </div>  
     </section>
 
     <!-- Speech & Prayer Section -->
